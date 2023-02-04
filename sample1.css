@@ -1,79 +1,251 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+<style>
+  * {
+  box-sizing: border-box;image-resolution: 4000px;
+  margin: 0;
+  padding: 20; /* 0 */
+}
+body {
+  counter-reset: numbers;
+  background: #16a085;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  display: flex;
+  height: 200vh; /* 200 */
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+input[type=checkbox] {
+  position: absolute;
+  text-indent: -9999px;
+  opacity: 0;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(5, 200px);
+  grid-auto-rows: 200px;
+  margin: auto;
+  order: 2;
+  background: rgba(0,0,0,0.3);
+  padding: 2rem;
+  justify-content: center;
+}
+.number-box {
+  display: flex;
+}
+.number-box label{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  color: white;
+  background: #f1c40f;
+  border-radius: 90%;
+  transform: scale(1.2);
+  transition: 0.3s;
+  transition-timing-function: cubic-bezier(.86,-0.41,.38,1.48);
+  position: relative;
+  cursor: pointer;
+}
+.number-box input:checked {
+  counter-increment: numbers;
+}
+.number-box label::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: calc(50% - 4px);
+  height: 8px;
+  width: 0;
+  background: rgba(255,255,255,0.5);
+  transition: 0.3s;
+}
+.number-box input:checked + label {
+  background: #2ecc71;
+  transform: scale(1);
+  font-weight: bold;
+}
+.number-box input:checked + label::before {
+  width: 64px;
+}
+.count {
+  order: 1;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 100;
+  margin-top: 1rem;
+}
+.count::after {
+  content: counter(numbers);
+}
+.banner1 {
+    /* The image used */
+    background-image:
+    url(Picture3.png);
+    background-size: 90%;
+    /* Set background position */
+    background-position:right center
   }
-  body {
-    counter-reset: numbers;
-    background: #16a085;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    display: flex;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  .banner2 {
+    /* The image used */
+    background-image:
+    url(chestnut.png);
+    background-size: 100%;
+    /* Set background position */
+    background-position:right center
+  }.banner3 {
+    /* The image used */
+    background-image:
+    url(Plumbago_sp.png);
+    background-size: 100%;
+    /* Set background position */
+    background-position:right center
+  }.banner4 {
+    /* The image used */
+    background-image:
+    url(boar.png);
+    background-size: 90%;
+    /* Set background position */
+    background-position:right center
+  }.banner5 {
+    /* The image used */
+    background-image:
+    url(Picture2.png);
+    background-size: 90%;
+    /* Set background position */
+    background-position:right center
+  }.banner6 {
+    /* The image used */
+    background-image:
+    url(violinmatis.png);
+    background-size: 100%;
+    /* Set background position */
+    background-position:right center
+  }.banner7 {
+    /* The image used */
+    background-image:
+    url(bee.png);
+    background-size:90%;
+    /* Set background position */
+    background-position:right center
+  }.banner9 {
+    /* The image used */
+    background-image:
+    url(jumping-spider.png);
+    background-size:100%;
+    /* Set background position */
+    background-position:right center
+  }.banner8 {
+    /* The image used */
+    background-image:
+    url(baldmynah.png);
+    background-size: 90%;
+    /* Set background position */
+    background-position:right center
+  }.banner10 {
+    /* The image used */
+    background-image:
+    url(bluebird.png);
+    background-size: 90%;
+    /* Set background position */
+    background-position:right center
+  }.banner11 {
+    /* The image used */
+    background-image:
+    url(candle-bush.png);
+    background-size: 90%;
+    /* Set background position */
+    background-position:right center
+  }.banner12 {
+    /* The image used */
+    background-image:
+    url(streated-kukri.png);
+    background-size: 90%;
+    /* Set background position */
+    background-position:right center
+  }.banner13 {
+    /* The image used */
+    background-image:
+    url(tarantula.png);
+    background-size: 90%;
+    /* Set background position */
+    background-position:right center
+  }.banner15 {
+    /* The image used */
+    background-image:
+    url(moniter-lizard.png);
+    background-size: 110%;
+    /* Set background position */
+    background-position:right center
+  }.banner14 {
+    /* The image used */
+    background-image:
+    url(ficus.png);
+    background-size: 100%;
+    /* Set background position */
+    background-position:right center
+  }.banner16 {
+    /* The image used */
+    background-image:
+    url(signature.png);
+    background-size: 95%;
+    /* Set background position */
+    background-position:right center
+  }.banner17 {
+    /* The image used */
+    background-image:
+    url(kostercurse.png);
+    background-size: 90%;
+    /* Set background position */
+    background-position:right center
+  }.banner18 {
+    /* The image used */
+    background-image:
+    url(ratsnake.png);
+    background-size:110%;
+    /* Set background position */
+    background-position:right center
+  }.banner19 {
+    /* The image used */
+    background-image:
+    url(whitecheeked.png);
+    background-size: 110%;
+    /* Set background position */
+    background-position:right center
+  }.banner20 {
+    /* The image used */
+    background-image:
+    url(kingfisher.png);
+    background-size: 90%;
+    /* Set background position */
+    background-position:right center
   }
-  input[type=checkbox] {
-    position: absolute;
-    text-indent: -9999px;
-    opacity: 0;
+  .text {
+    text-align: center;
   }
-  .board {
-    display: grid;
-    grid-template-columns: repeat(10, 64px);
-    grid-auto-rows: 64px;
-    margin: auto;
-    order: 2;
-    background: rgba(0,0,0,0.3);
-    padding: 1rem;
-    justify-content: center;
-  }
-  .number-box {
-    display: flex;
-  }
-  .number-box label{
-    display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    color: white;
-    background: #f1c40f;
-    border-radius: 50%;
-    transform: scale(0.8);
-    transition: 0.3s;
-    transition-timing-function: cubic-bezier(.86,-0.41,.38,1.48);
-    position: relative;
-    cursor: pointer;
-  }
-  .number-box input:checked {
-    counter-increment: numbers;
-  }
-  .number-box label::before {
-    position: absolute;
-    content: "";
-    left: 0;
-    top: calc(50% - 4px);
-    height: 8px;
-    width: 0;
-    background: rgba(255,255,255,0.5);
-    transition: 0.3s;
-  }
-  .number-box input:checked + label {
-    background: #2ecc71;
-    transform: scale(1);
-    font-weight: bold;
-  }
-  .number-box input:checked + label::before {
-    width: 64px;
-  }
-  .count {
-    order: 1;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 100;
-    margin-top: 1rem;
-  }
-  .count::after {
-    content: counter(numbers);
-  }
+  .topnav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+  background-color: #04AA6D;
+  color: white;
+}
